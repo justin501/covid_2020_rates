@@ -7,7 +7,7 @@ In this project, I created two interactive web maps that visualize covid-19 data
 The first visualization is a choropleth map that focuses on covid rates by county in USA, 2020. When viewers hover their mouse, the county name and case number per county will show. 
 </p>
 <p>
-The second visualization is a proportional symbols map that focuses on covid-19 cases in USA, 2020. When viewers click on the location, the number of total cases per US county will show. The legend displays the proportion of circle size to number of cases.
+The second visualization is a proportional symbols map that focuses on covid-19 cases in USA, 2020. When viewers click on the location, the number of total cases per US county will show. The legend displays the proportion of circle size to number of cases. Viewers can also zoom in and out and mouseover while holding right click to switch map viewing angles.
 </p>
 
 ### References

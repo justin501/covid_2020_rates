@@ -3,14 +3,14 @@ mapboxgl.accessToken =
 let map = new mapboxgl.Map({
 container: 'map', // container ID
 style: 'mapbox://styles/mapbox/dark-v10',
-zoom: 3.9, // starting zoom
-center: [-95, 37] // starting center
-
+zoom: 3.8, // starting zoom
+center: [-98, 39], // starting center
+projection: 'albers'
 });
 
 const cases = [2500, 5000, 10000],
 colors = ['rgb(208,209,230)', 'rgb(103,169,207)', 'rgb(1,108,89)'],
-radii = [5, 15, 20];
+radii = [2, 6, 12];
 
 //load data to the map as new layers.
 //map.on('load', function loadingData() {
@@ -27,7 +27,6 @@ map.addLayer({
         'id': 'covid-point',
         'type': 'circle',
         'source': 'covid-counts',
-        'minzoom': 5,
         'paint': {
             // increase the radii of the circle as the zoom level and dbh value increases
             'circle-radius': {
@@ -65,7 +64,7 @@ map.addLayer({
 
 
 // click on tree to view magnitude in a popup
-map.on('click', 'covid-counts', (event) => {
+map.on('click', 'covid-point', (event) => {
     new mapboxgl.Popup()
         .setLngLat(event.features[0].geometry.coordinates)
         .setHTML(`<strong>Cases:</strong> ${event.features[0].properties.cases}`)
