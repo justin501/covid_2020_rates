@@ -5,6 +5,7 @@ container: 'map', // container ID
 style: 'mapbox://styles/mapbox/dark-v10',
 zoom: 3.9, // starting zoom
 center: [-95, 37] // starting center
+
 });
 
 const cases = [2500, 5000, 10000],
@@ -23,7 +24,7 @@ map.addSource('covid-counts', {
 });
 
 map.addLayer({
-        'id': 'covid-counts-point',
+        'id': 'covid-point',
         'type': 'circle',
         'source': 'covid-counts',
         'minzoom': 5,
@@ -64,7 +65,7 @@ map.addLayer({
 
 
 // click on tree to view magnitude in a popup
-map.on('click', 'cases-point', (event) => {
+map.on('click', 'covid-counts', (event) => {
     new mapboxgl.Popup()
         .setLngLat(event.features[0].geometry.coordinates)
         .setHTML(`<strong>Cases:</strong> ${event.features[0].properties.cases}`)
