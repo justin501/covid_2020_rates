@@ -81,8 +81,8 @@ const legend = document.getElementById('legend');
 var labels = ['<strong>Number of Covid Cases</strong>'],
 vbreak;
 //iterate through grades and create a scaled circle and label for each
-for (var i = 0; i < grades.length; i++) {
-vbreak = grades[i];
+for (var i = 0; i < cases.length; i++) {
+vbreak = cases[i];
 // you need to manually adjust the radius of each dot on the legend 
 // in order to make sure the legend can be properly referred to the dot on the map.
 dot_radii = 2 * radii[i];
@@ -95,6 +95,6 @@ labels.push(
 }
 // add the data source
 const source =
-'<p style="text-align: right; font-size:10pt">Source: <a href="https://github.com/nytimes/covid-19-data/blob/43d32dde2f87bd4dafbb7d23f5d9e878124018b8/live/us-counties.csv">USGS</a></p>';
+    '<p style="text-align: right; font-size:10pt">Source: <a href="https://github.com/nytimes/covid-19-data/blob/43d32dde2f87bd4dafbb7d23f5d9e878124018b8/live/us-counties.csv">USGS</a></p>';
 // combine all the html codes.
 legend.innerHTML = labels.join('') + source;
